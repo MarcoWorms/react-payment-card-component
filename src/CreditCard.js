@@ -1,18 +1,26 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styles from './assets/main.scss'
+import nubank from './assets/logos/nubank.png'
 
 class CreditCard extends Component {
   constructor(props) {
     super(props)
+    
+    const logos = {
+      nubank,
+    }
+
     this.state = {
-      flipped: false
+      flipped: false,
+      logos,
+      ...props,
     }
   }
 
   componentWillMount() {
     const bank = this.props.bank
-    if (bank != 'default' && !styles.hasOwnProperty(bank)) {
+    if (bank !== 'default' && !styles.hasOwnProperty(bank)) {
       throw new Error(`No styles for the Bank: ${this.props.bank}`)
     }
   }
@@ -22,13 +30,13 @@ class CreditCard extends Component {
   }
 
   render() {
-    const { bank, type } = this.props
+    const { bank, type, brand, logos } = this.state
 
     return (
       <div className={`${styles.card} ${styles[bank]} ${styles[type]}`}>
         <div className={styles.front}>
           <figure className={styles.figure}>
-            <img className={styles.logo} />
+            <img className={styles.logo} alt={`Logo ${bank}.`} src={logos[bank]} />
           </figure>
           <div className={styles.chip}>
             <div className={styles.trace}></div>
@@ -47,7 +55,9 @@ class CreditCard extends Component {
           <div className={styles.holderName}>
             {this.props.holderName}
           </div>
-          <div className={styles.brand}></div>
+          <div className={styles[brand]}>
+            <span className={styles.name}></span>
+          </div>
         </div>
         <div className="back"></div>
       </div>
@@ -57,7 +67,8 @@ class CreditCard extends Component {
 
 CreditCard.propTypes = {
   bank: PropTypes.oneOf([
-    'default'
+    'default',
+    'nubank',
   ]).isRequired,
   brand: PropTypes.oneOf([
     'mastercard',
