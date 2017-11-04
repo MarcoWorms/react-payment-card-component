@@ -1,0 +1,93 @@
+.card {
+  position: relative;
+  width: 350px;
+  height: 222px;
+  min-width: 350px;
+  margin: 10px auto;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.6));
+  transform: translateY(calc(50% - 10px));
+  background: linear-gradient(90deg, #353535, #717171);
+
+  .chip {
+    position: absolute;
+    top: 100px;
+
+    width: 50px;
+    height: 40px;
+    background: radial-gradient(#d9a56c, #b18457);
+    border-radius: 5px;
+    transform: translate(33px, -40px);
+    overflow: hidden;
+
+    .trace {
+      width: 50px;
+      height: 40px;
+      border-radius: 13px;
+      background: transparent;
+      border: 1px solid #666;
+      position: absolute;
+      z-index: 0;
+
+      &:nth-child(1) {
+        transform: translate(37px, 15px);
+      }
+
+      &:nth-child(2) {
+        transform: translate(15px, 30px);
+      }
+
+      &:nth-child(3) {
+        transform: translate(-37px, -15px);
+      }
+
+      &:nth-child(4) {
+        transform: translate(-15px, -30px);
+      }
+    }
+  }
+
+  .number {
+    position: absolute;
+    top: 120px;
+    left: 30px;
+    font-family: "Overpass Mono", monospaced;;
+    font-size: 1.15em;
+    font-weight: normal;
+    color: #f6d3fd;
+    letter-spacing: 2.5px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  }
+
+
+  .date {
+    position: absolute;
+    top: 180px;
+    left: 0;
+    font-size: .9em;
+    justify-content: space-between;
+    color: #f6d3fd;
+    font-family: "Overpass Mono", monospaced;;
+    transform: translate(60px, 0px);
+
+    .expiration{
+      position: relative;
+      left: -25px;
+      filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+    }
+  }
+
+  .holderName {
+    position: absolute;
+    top: 130px;
+    left: 0;
+    font-family: "Overpass Mono", monospaced;;
+    font-size: 1.0em;
+    font-weight: normal;
+    color: #f6d3fd;
+    letter-spacing: 2.5px;
+    transform: translate(35px, 25px);
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+  }
+}
