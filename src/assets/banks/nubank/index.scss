@@ -1,0 +1,36 @@
+/* TYPES */
+@import "platinum.scss";
+@import "gold.scss";
+
+.nubank {
+  background: linear-gradient(to bottom right, #833e85 0%, #521a5a 100%);
+
+  .figure {
+    .logo {
+      --widthLogo: 120px;
+      width: var(--widthLogo);
+      position: absolute;
+      right: 50%;
+      transform: translate(calc(var(--widthLogo) / 2), 15px);
+    }
+  }
+
+  .date {
+    top: 160px;
+    transform: translate(190px, 0px);
+
+    &:before {
+      content: "valid thru";
+      text-transform: uppercase;
+      position: absolute;
+      font-size: 0.425rem;
+      opacity: .3;
+      top: -1rem;
+      left: -1.3rem;
+    }
+  }
+
+  .holderName {
+    top: 165px;
+  }
+}
