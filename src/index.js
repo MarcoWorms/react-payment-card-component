@@ -1,1 +1,1 @@
-export { CreditCard } from './CreditCard'
+export { CreditCard } from './components/CreditCard'

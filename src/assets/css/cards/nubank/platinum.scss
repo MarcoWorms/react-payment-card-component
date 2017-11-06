@@ -1,5 +1,6 @@
-.nubank {
-  &.platinum {
+.card {
+  &.nubank {
+    &.platinum {
       &:before {
         content: "platinum";
         font-family: "Share Tech Mono", monospace;
@@ -12,5 +13,6 @@
         margin: 4.8rem 9rem;
         position: absolute;
       }
+    }
   }
 }

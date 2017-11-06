@@ -10,6 +10,5 @@ cache:
 
 script:
   - yarn
-  - test -z "$(git diff)"
   - yarn build
   - yarn test
