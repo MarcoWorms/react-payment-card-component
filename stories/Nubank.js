@@ -1,30 +1,44 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
+import CreditCard from '../src/components/CreditCard'
 
-import CreditCard from '../src/CreditCard'
+class CardContainer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      flipped: false
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <CreditCard
+          bank="nubank"
+          brand="mastercard"
+          number="4111111111111111"
+          cvv="123"
+          holderName="Fulano de Tal"
+          expiration="12/19"
+          type={this.props.type}
+          flipped={this.state.flipped}
+        />
+        <br />
+        <button onClick={() => {
+          const flipped = !this.state.flipped
+          this.setState({ flipped })
+        }}>
+          Flip the card
+        </button>
+      </div>
+    )
+  }
+}
 
 storiesOf('Nubank', module)
   .add('Platinum', () => (
-    <div>
-      <CreditCard
-        bank="nubank"
-        brand="mastercard"
-        number="4111111111111111"
-        holderName="Fulano de Tal"
-        expiration="12/19"
-        type="platinum"
-      />
-    </div>
+    <CardContainer type="platinum" />
   ))
   .add('Gold', () => (
-    <div>
-      <CreditCard
-        bank="nubank"
-        brand="mastercard"
-        number="4111111111111111"
-        holderName="Fulano de Tal"
-        expiration="12/19"
-        type="gold"
-      />
-    </div>
+    <CardContainer type="gold" />
   ))

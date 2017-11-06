@@ -1,0 +1,161 @@
+$textColor: #f6d3fd;
+$textFont: "Overpass Mono", monospaced;
+$textShadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+
+.cardWrapper {
+  perspective: 1000px;
+
+  .card {
+    position: relative;
+    width: 350px;
+    height: 222px;
+    min-width: 350px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+    transform-style: preserve-3d;
+    transition: all .25s ease-out;
+
+    .front {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      z-index: 1;
+
+      .chip {
+        position: absolute;
+        width: 50px;
+        height: 40px;
+        border-radius: 5px;
+        background: radial-gradient(#e8e8e8, #808080);
+        overflow: hidden;
+
+        .trace {
+          position: absolute;
+          width: 50px;
+          height: 40px;
+          border-radius: 13px;
+          background: transparent;
+          border: 1px solid #666;
+          z-index: 0;
+
+          &:nth-child(1) {
+            transform: translate(37px, 15px);
+          }
+
+          &:nth-child(2) {
+            transform: translate(15px, 30px);
+          }
+
+          &:nth-child(3) {
+            transform: translate(-37px, -15px);
+          }
+
+          &:nth-child(4) {
+            transform: translate(-15px, -30px);
+          }
+        }
+      }
+
+      .number {
+        position: absolute;
+        font-family: $textFont;
+        font-size: 1.15em;
+        font-weight: normal;
+        color: $textColor;
+        letter-spacing: 2.5px;
+        text-shadow: $textShadow;
+      }
+
+      .holderName {
+        position: absolute;
+        color: $textColor;
+        font-family: $textFont;
+        font-size: 1.0em;
+        font-weight: normal;
+        letter-spacing: 2.3px;
+        text-transform: uppercase;
+        text-shadow: $textShadow;
+      }
+
+      .expiration {
+        position: absolute;
+        color: $textColor;
+        font-family: $textFont;
+        font-size: .9em;
+        text-shadow: $textShadow;
+        justify-content: space-between;
+      }
+
+      .brand {
+        position: absolute;
+      }
+    }
+
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      transform: rotateY(180deg);
+      opacity: 0;
+      z-index: 0;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background-color: #000;
+        display: block;
+      }
+
+      .cvv {
+        position: absolute;
+        top: 66px;
+        left: 20px;
+        width: 61%;
+        padding: 7px 12px;
+        background-color: #CCC;
+        font-size: .9em;
+        font-family: "Poppins", serif;
+        font-style: italic;
+        text-align: right;
+      }
+    }
+
+    &.flipped {
+      background: linear-gradient(90deg, #353535, #111);
+      box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.6);
+      transform: rotateY(180deg);
+
+      .front {
+        .figure {
+          display: none;
+        }
+
+        .chip {
+          background: #95867c;
+
+          .trace {
+            display: none;
+          }
+        }
+
+        .number,
+        .holderName,
+        .expiration {
+          color: #848484;
+          text-shadow: 1px -1px 0 #000, 0 0 0 #000, 1px -1px 0 #000;
+        }
+      }
+
+      .back {
+        opacity: 1;
+      }
+    }
+  }
+}

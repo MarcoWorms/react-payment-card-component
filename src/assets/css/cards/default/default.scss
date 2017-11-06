@@ -1,0 +1,36 @@
+.card {
+  &.default {
+    background: linear-gradient(90deg, #353535, #717171);
+
+    .figure {
+      display: none;
+    }
+
+    .front {
+      .chip {
+        top: 29%;
+        left: 8%;
+      }
+
+      .number {
+        top: 53%;
+        left: 8%;
+      }
+
+      .holderName {
+        top: 70%;
+        left: 8%;
+      }
+
+      .expiration {
+        top: 84%;
+        left: 8%;
+      }
+
+      .brand {
+        bottom: 8%;
+        right: 8%;
+      }
+    }
+  }
+}
