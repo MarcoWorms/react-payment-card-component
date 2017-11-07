@@ -114,6 +114,7 @@ $textShadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
       }
 
       .cvv {
+        -webkit-backface-visibility: hidden;
         position: absolute;
         top: 66px;
         left: 20px;
