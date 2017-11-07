@@ -55,7 +55,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "start-storybook -p 6006",
-    "preview": "storybook-to-ghpages"
+    "preview": "storybook-to-ghpages",
+    "lint": "eslint ."
   },
   "jest": {
     "collectCoverageFrom": [
