@@ -4,6 +4,8 @@
 
 .card {
   &.nubank {
+    --cart-text-color: #f6d3fd;
+
     background: linear-gradient(to bottom right, #833e85 0%, #521a5a 100%);
 
     &.flipped {

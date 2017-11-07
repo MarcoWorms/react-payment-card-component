@@ -1,6 +1,8 @@
-$textColor: #f6d3fd;
-$textFont: "Overpass Mono", monospaced;
-$textShadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+:root {
+  --cart-text-color: #fff;
+  --cart-text-font: "Overpass Mono", monospaced;
+  --cart-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
 
 .cardWrapper {
   perspective: 1000px;
@@ -20,6 +22,9 @@ $textShadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
       height: 100%;
       border-radius: 10px;
       z-index: 1;
+      color: var(--cart-text-color);
+      font-family: var(--cart-text-font);
+      text-shadow: var(--cart-text-shadow);
 
       .chip {
         position: absolute;
@@ -58,31 +63,22 @@ $textShadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
 
       .number {
         position: absolute;
-        font-family: $textFont;
         font-size: 1.15em;
         font-weight: normal;
-        color: $textColor;
         letter-spacing: 2.5px;
-        text-shadow: $textShadow;
       }
 
       .holderName {
         position: absolute;
-        color: $textColor;
-        font-family: $textFont;
         font-size: 1.0em;
         font-weight: normal;
         letter-spacing: 2.3px;
         text-transform: uppercase;
-        text-shadow: $textShadow;
       }
 
       .expiration {
         position: absolute;
-        color: $textColor;
-        font-family: $textFont;
         font-size: .9em;
-        text-shadow: $textShadow;
         justify-content: space-between;
       }
 
