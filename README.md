@@ -7,7 +7,7 @@
   <a href="https://travis-ci.org/pagarme/react-payment-card-component" target="_blank">
     <img src="https://travis-ci.org/pagarme/react-payment-card-component.svg?branch=master">
   </a>
-  <a href="https://github.com/thiagommedeiros/bus-promise/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/pagarme/react-payment-card-component/blob/master/LICENSE" target="_blank">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg">
   </a>
 </p>
