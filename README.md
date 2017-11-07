@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="card.gif" alt="React Cards Component" />
+  <img src="card.gif" alt="React Payment Card Component" />
 </p>
-<h1 align="center">React Cards Component</h1>
+<h1 align="center">React Payment Card Component</h1>
 
 <p align="center">
-  <a href="https://travis-ci.org/pagarme/react-cards-component" target="_blank">
-    <img src="https://travis-ci.org/pagarme/react-cards-component.svg?branch=master">
+  <a href="https://travis-ci.org/pagarme/react-payment-card-component" target="_blank">
+    <img src="https://travis-ci.org/pagarme/react-payment-card-component.svg?branch=master">
   </a>
   <a href="https://github.com/thiagommedeiros/bus-promise/blob/master/LICENSE" target="_blank">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg">
