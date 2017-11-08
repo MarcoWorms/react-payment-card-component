@@ -4,6 +4,8 @@
 
 .card {
   &.nubank {
+    --cart-text-color: #f6d3fd;
+
     background: linear-gradient(to bottom right, #833e85 0%, #521a5a 100%);
 
     &.flipped {
@@ -38,7 +40,7 @@
         content: "valid thru";
         text-transform: uppercase;
         position: absolute;
-        font-size: 0.425rem;
+        font-size: 7px;
         opacity: .3;
         top: -10px;
       }
