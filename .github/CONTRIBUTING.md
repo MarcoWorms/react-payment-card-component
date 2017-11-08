@@ -6,7 +6,7 @@ This are the common guidelines to contribute to `react-payment-card-component`. 
 
 ## Code of conduct
 
-This project and everyone participating in it is governed by the [Pagar.me Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [mercurio@pagar.me](mailto:mercurio@pagar.me).
+This project and everyone participating in it is governed by the [Pagar.me Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [developers@pagar.me](mailto:developers@pagar.me).
 
 ## How can I contribute?
 
@@ -24,7 +24,7 @@ We follow the [pagarme/git-style-guide](https://github.com/pagarme/git-style-gui
 
 ### How to report a bug
 
-If you find a security vulnerability, do NOT open an issue. Email [mercurio@pagar.me](mailto:mercurio@pagar.me) instead.
+If you find a security vulnerability, do NOT open an issue. Email [developers@pagar.me](mailto:developers@pagar.me) instead.
 
 When reporting a bug make sure to include:
 - The project version you are running
