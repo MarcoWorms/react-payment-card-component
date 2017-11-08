@@ -63,22 +63,22 @@
 
       .number {
         position: absolute;
-        font-size: 1.15em;
+        font-size: 18px;
         font-weight: normal;
-        letter-spacing: 2.5px;
+        letter-spacing: 0.14em;
       }
 
       .holderName {
         position: absolute;
-        font-size: 1.0em;
+        font-size: 16px;
         font-weight: normal;
-        letter-spacing: 2.3px;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
       }
 
       .expiration {
         position: absolute;
-        font-size: .9em;
+        font-size: 15px;
         justify-content: space-between;
       }
 
@@ -117,7 +117,7 @@
         width: 61%;
         padding: 7px 12px;
         background-color: #CCC;
-        font-size: .9em;
+        font-size: 14px;
         font-family: "Poppins", serif;
         font-style: italic;
         text-align: right;
