@@ -1,0 +1,153 @@
+:root {
+  --cart-text-color: #fff;
+  --cart-text-font: "Overpass Mono", monospaced;
+  --cart-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.cardWrapper {
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 222px;
+  min-width: 350px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+  transform-style: preserve-3d;
+  transition: all .25s ease-out;
+}
+
+.front {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  z-index: 1;
+  color: var(--cart-text-color);
+  font-family: var(--cart-text-font);
+  text-shadow: var(--cart-text-shadow);
+}
+
+.chip {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  border-radius: 5px;
+  background: radial-gradient(#e8e8e8, #808080);
+  overflow: hidden;
+}
+
+        /*.trace {
+          position: absolute;
+          width: 50px;
+          height: 40px;
+          border-radius: 13px;
+          background: transparent;
+          border: 1px solid #666;
+          z-index: 0;
+
+          &:nth-child(1) {
+            transform: translate(37px, 15px);
+          }
+
+          &:nth-child(2) {
+            transform: translate(15px, 30px);
+          }
+
+          &:nth-child(3) {
+            transform: translate(-37px, -15px);
+          }
+
+          &:nth-child(4) {
+            transform: translate(-15px, -30px);
+          }
+        }
+      }*/
+
+.number {
+  position: absolute;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.14em;
+}
+
+.holderName {
+  position: absolute;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.expiration {
+  position: absolute;
+  font-size: 15px;
+  justify-content: space-between;
+}
+
+.brand {
+  position: absolute;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transform: rotateY(180deg);
+  opacity: 0;
+  z-index: 0;
+}
+
+.back:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #000;
+  display: block;
+}
+
+.cvv {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 66px;
+  left: 20px;
+  width: 61%;
+  padding: 7px 12px;
+  background-color: #CCC;
+  font-size: 14px;
+  font-family: "Poppins", serif;
+  font-style: italic;
+  text-align: right;
+}
+
+.flipped {
+  background: linear-gradient(90deg, #353535, #111);
+  box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.6);
+  transform: rotateY(180deg);
+}
+
+.flipped .figure {
+  display: none;
+}
+
+.flipped .chip {
+  background: #95867c;
+}
+
+.flipped .number,
+.flipped .holderName,
+.flipped .expiration {
+  color: #848484;
+  text-shadow: 1px -1px 0 #000, 0 0 0 #000, 1px -1px 0 #000;
+}
+
+.flipped .back {
+  opacity: 1;
+}

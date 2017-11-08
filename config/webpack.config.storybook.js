@@ -1,5 +1,7 @@
 const paths = require('./paths.js')
 const eslintFormatter = require('react-dev-utils/eslintFormatter')
+const stylelintFormatter = require('./stylelintFormatter')
+const postcssUrlRebase = require('./postcssUrlRebase')
 
 module.exports = {
   module: {
@@ -19,8 +21,68 @@ module.exports = {
         include: paths.appSrc,
       },
       {
-        test: /\.scss$/,
-        loader: 'style-loader!css-loader?modules&camelCase&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass-loader'
+        test: /\.css$/,
+        enforce: 'pre',
+        use: [
+          {
+            options: {
+              formatter: stylelintFormatter,
+              plugins: () => [
+                require('stylelint'),
+                require('postcss-sass-each'),
+                require('postcss-mixins'),
+                require('postcss-import'),
+                require('postcss-url')({
+                  url: postcssUrlRebase,
+                }),
+                require('postcss-cssnext')({
+                  features: {
+                    customProperties: {
+                      strict: false,
+                    },
+                  },
+                }),
+              ],
+            },
+            loader: require.resolve('postcss-loader'),
+          },
+        ],
+        include: paths.appSrc,
+      },
+      {
+        test: /\.css$/,
+        use: [
+          require.resolve('style-loader'),
+          {
+            loader: require.resolve('css-loader'),
+            options: {
+              importLoaders: 1,
+              modules: 0,
+              localIdentName: '[path]-[name]-[local]',
+            },
+          },
+          {
+            loader: require.resolve('postcss-loader'),
+            options: {
+              ident: 'postcss',
+              plugins: () => [
+                require('stylelint'),
+                require('postcss-sass-each'),
+                require('postcss-mixins'),
+                require('postcss-import'),
+                require('postcss-url')({
+                  url: postcssUrlRebase,
+                }),
+                require('postcss-cssnext')({
+                  // We don't transpile CSS variables module in Storybook
+                  features: {
+                    customProperties: false,
+                  },
+                }),
+              ],
+            },
+          },
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg|png)$/,

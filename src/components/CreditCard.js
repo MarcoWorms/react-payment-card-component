@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from '../assets/css/main.scss'
+import styles from './CreditCard.css'
 import logos from '../helpers/logos'
 
 const CreditCard = (props) => {

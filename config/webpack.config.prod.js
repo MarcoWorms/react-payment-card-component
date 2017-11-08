@@ -12,6 +12,8 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
+const stylelintFormatter = require('./stylelintFormatter');
+const postcssUrlRebase = require('./postcssUrlRebase');
 
 const reactExternal = {
   root: 'React',
@@ -147,6 +149,29 @@ module.exports = {
         include: paths.appSrc,
       },
       {
+        test: /\.css$/,
+        enforce: 'pre',
+        use: [
+          {
+            options: {
+              formatter: stylelintFormatter,
+              plugins: () => [
+                require('stylelint'),
+                require('postcss-sass-each'),
+                require('postcss-mixins'),
+                require('postcss-import'),
+                require('postcss-url')({
+                  url: postcssUrlRebase,
+                }),
+                require('postcss-cssnext'),
+              ],
+            },
+            loader: require.resolve('postcss-loader'),
+          },
+        ],
+        include: paths.appSrc,
+      },
+      {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
         // back to the "file" loader at the end of the loader list.
@@ -184,28 +209,20 @@ module.exports = {
           // use the "style" loader inside the async code so CSS from them won't be
           // in the main CSS file.
           {
-            test: /\.scss$/,
+            test: /\.css$/,
             loader: ExtractTextPlugin.extract(
               Object.assign(
                 {
-                  fallback: {
-                    loader: require.resolve('style-loader'),
-                    options: {
-                      hmr: false,
-                    },
-                  },
+                  fallback: require.resolve('style-loader'),
                   use: [
                     {
                       loader: require.resolve('css-loader'),
                       options: {
                         importLoaders: 1,
                         minimize: true,
-                        modules: 1,
+                        modules: 0,
                         sourceMap: shouldUseSourceMap,
                       },
-                    },
-                    {
-                      loader: require.resolve('sass-loader'),
                     },
                     {
                       loader: require.resolve('postcss-loader'),
@@ -214,16 +231,15 @@ module.exports = {
                         // https://github.com/facebookincubator/create-react-app/issues/2677
                         ident: 'postcss',
                         plugins: () => [
+                          require('stylelint'),
                           require('postcss-flexbugs-fixes'),
-                          autoprefixer({
-                            browsers: [
-                              '>1%',
-                              'last 4 versions',
-                              'Firefox ESR',
-                              'not ie < 9', // React doesn't support IE8 anyway
-                            ],
-                            flexbox: 'no-2009',
-                          }),
+                          require('postcss-import'),
+                          require('postcss-sass-each'),
+                          // This is necessary because postcss-url doesn't add
+                          // a trailing ./ to rebased URLs, causing relative imports
+                          // to stop working.
+                          require('postcss-url')({ url: postcssUrlRebase }),
+                          require('postcss-cssnext'),
                         ],
                       },
                     },

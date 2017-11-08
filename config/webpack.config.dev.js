@@ -11,6 +11,8 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
+const stylelintFormatter = require('./stylelintFormatter');
+const postcssUrlRebase = require('./postcssUrlRebase');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -123,6 +125,29 @@ module.exports = {
         include: paths.appSrc,
       },
       {
+        test: /\.css$/,
+        enforce: 'pre',
+        use: [
+          {
+            options: {
+              formatter: stylelintFormatter,
+              plugins: () => [
+                require('stylelint'),
+                require('postcss-sass-each'),
+                require('postcss-mixins'),
+                require('postcss-import'),
+                require('postcss-url')({
+                  url: postcssUrlRebase,
+                }),
+                require('postcss-cssnext'),
+              ],
+            },
+            loader: require.resolve('postcss-loader'),
+          },
+        ],
+        include: paths.appSrc,
+      },
+      {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
         // back to the "file" loader at the end of the loader list.
@@ -157,18 +182,15 @@ module.exports = {
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
           {
-            test: /\.scss$/,
+            test: /\.css$/,
             use: [
               require.resolve('style-loader'),
               {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
-                  modules: 1,
+                  modules: 0,
                 },
-              },
-              {
-                loader: require.resolve('sass-loader'),
               },
               {
                 loader: require.resolve('postcss-loader'),
@@ -177,16 +199,16 @@ module.exports = {
                   // https://github.com/facebookincubator/create-react-app/issues/2677
                   ident: 'postcss',
                   plugins: () => [
+                    require('stylelint'),
                     require('postcss-flexbugs-fixes'),
-                    autoprefixer({
-                      browsers: [
-                        '>1%',
-                        'last 4 versions',
-                        'Firefox ESR',
-                        'not ie < 9', // React doesn't support IE8 anyway
-                      ],
-                      flexbox: 'no-2009',
-                    }),
+                    require('postcss-sass-each'),
+                    require('postcss-import'),
+                    require('postcss-mixins'),
+                    // This is necessary because postcss-url doesn't add
+                    // a trailing ./ to rebased URLs, causing relative imports
+                    // to stop working.
+                    require('postcss-url')({ url: postcssUrlRebase }),
+                    require('postcss-cssnext'),
                   ],
                 },
               },
