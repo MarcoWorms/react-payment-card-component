@@ -7,7 +7,6 @@
     "react-dom": "16.0.0",
     "react-dev-utils": "4.2.1",
     "raf": "3.4.0",
-    "prop-types": "15.6.0",
     "promise": "8.0.1",
     "object-assign": "4.1.1",
     "dotenv": "4.0.0",
@@ -32,6 +31,9 @@
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.4.0",
+    "eslint-config-pagarme-react": "1.1.0",
+    "stylelint": "8.2.0",
+    "stylelint-config-pagarme-react": "1.1.0",    
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
@@ -51,12 +53,14 @@
     "whatwg-fetch": "2.0.3"
   },
   "peerDependencies": {
+    "prop-types": "15.6.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0"
   },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "lint": "eslint './src/**/*.js' && stylelint './src/**/*.css'",
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "start-storybook -p 6006",
     "preview": "storybook-to-ghpages",
@@ -103,6 +107,28 @@
     ]
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "pagarme-react",
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "rules": {
+      "react/jsx-filename-extension": 0
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-pagarme-react",
+    "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "each",
+            "mixin",
+            "define-mixin"
+          ]
+        }
+      ]
+    }
   }
 }
