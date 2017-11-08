@@ -68,7 +68,7 @@ describe('CreditCard', () => {
   it('should mount with flipped', () => {
     shallow(
       <CreditCard
-        flipped={true}
+        flipped
       />
     )
   })
@@ -82,7 +82,7 @@ describe('CreditCard', () => {
         cvv="123"
         holderName="Fulano de Tal"
         expiration="12/19"
-        flipped={true}
+        flipped
       />
     )
   })

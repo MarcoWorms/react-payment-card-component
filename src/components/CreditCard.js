@@ -22,8 +22,8 @@ const CreditCard = (props) => {
     flipped ? styles.flipped : '',
   ]).join(' ')
 
-  const formatCardNumberWithSpaces = (number) =>
-    number.replace(/(\d{4})/g, '$1 ')
+  const formatCardNumberWithSpaces = cardNumber =>
+    cardNumber.replace(/(\d{4})/g, '$1 ')
 
   return (
     <div className={styles.cardWrapper}>
@@ -33,13 +33,14 @@ const CreditCard = (props) => {
             <img
               className={styles.logo}
               alt={bank}
-              src={logos[bank]}/>
+              src={logos[bank]}
+            />
           </figure>
           <div className={styles.chip}>
-            <div className={styles.trace}></div>
-            <div className={styles.trace}></div>
-            <div className={styles.trace}></div>
-            <div className={styles.trace}></div>
+            <div className={styles.trace} />
+            <div className={styles.trace} />
+            <div className={styles.trace} />
+            <div className={styles.trace} />
           </div>
           <div className={styles.number}>
             {formatCardNumberWithSpaces(number)}
@@ -50,7 +51,7 @@ const CreditCard = (props) => {
           <div className={styles.holderName}>
             {holderName}
           </div>
-          <div className={`${styles.brand} ${styles[brand]}`}></div>
+          <div className={`${styles.brand} ${styles[brand]}`} />
         </div>
         <div className={styles.back}>
           <div className={styles.cvv}>
@@ -70,7 +71,7 @@ CreditCard.propTypes = {
   brand: PropTypes.oneOf([
     'mastercard',
     'visa',
-    'hipercard'
+    'hipercard',
   ]),
   type: PropTypes.string,
   number: PropTypes.string,
@@ -83,6 +84,7 @@ CreditCard.propTypes = {
 CreditCard.defaultProps = {
   bank: 'default',
   brand: 'mastercard',
+  type: null,
   number: '•••• •••• •••• ••••',
   cvv: '•••',
   holderName: 'Nome Completo',
