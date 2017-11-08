@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - "8"
+  - '8'
 
 cache:
   yarn: true
@@ -12,3 +12,7 @@ script:
   - yarn
   - yarn build
   - yarn test
+
+notifications:
+  slack:
+    secure: djS1daAgq2ECP6GCdlZBlITRq0tr1MZYGG6R2TnzrGkK7yiRjzcS8xJB5pjg9XITjkBL+rL6+4zfquujJOko8V0zOKuW9zxqJjhWb+HI9XYvYJBCnQ9lXJZfWIwEduhv8OXlFv5DIn+MBP2swuBb03Fyb7yrJOrN+4QkCGPXEIGCvkQKTyyavdzYOz2ByPnknS7OwWLNEGjpeEZxJdfEfGPEkQ+kKN3Fv3W3rAtt9CYb5iGjl7b6YW68SpI3pClajvgIHP3FcwfR6ODBPk/KlozR1Axn+3Ma+R92+L0IQGvLDUeBY0DQDI0ujpniK4l1fiyGvbPnnUtg2p4rwHYc15RUAaxOWZa9lzZmgwcKPqA7StkwcOFqmxrXXnkVqShGjgJlrrEDo08r9aU0HWQ5eWqNqGM4MSOHNp2lXhcuxtjP2dM71tEw+BZl2j2YYlhgVN6ld2Ykekj+D9WPaFY63eWEMe4wTWh7DHNXIROnlcMwMBiiDVL+L62f+5M+rCFG+NDm77zNZlh2ZzZgWDJMhaOga4USOlByNnHPTOpDYK5aCXqE4ZKCOjk+f82mAm/+OkCvekSRKhveNKVSw68/GzSlrr6IQ4xuIdBIlOG1d/Xrb29dMFaH1YI7TwS42nLDI+WZKiXDrCs1rRqA/J5VfG0JTzef/Tc0xy+mHF3Y0Os=
