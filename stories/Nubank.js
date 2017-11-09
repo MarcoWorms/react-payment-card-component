@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
-import CreditCard from '../src/components/CreditCard'
+import PaymentCard from '../src/components/PaymentCard/PaymentCard'
 
 class CardContainer extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
-      flipped: false
+      flipped: false,
     }
   }
 
-  render() {
+  render () {
     return (
       <div>
-        <CreditCard
+        <PaymentCard
           bank="nubank"
           brand="mastercard"
           number="4111111111111111"
@@ -36,9 +36,9 @@ class CardContainer extends Component {
 }
 
 storiesOf('Nubank', module)
-  .add('Platinum', () => (
-    <CardContainer type="platinum" />
-  ))
   .add('Gold', () => (
     <CardContainer type="gold" />
+  ))
+  .add('Platinum', () => (
+    <CardContainer type="platinum" />
   ))

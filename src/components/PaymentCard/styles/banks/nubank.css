@@ -1,0 +1,51 @@
+.card.nubank {
+  background: linear-gradient(to bottom right, #833e85 0%, #521a5a 100%);
+}
+
+.nubank.flipped {
+  background: linear-gradient(to bottom right, #833e85 0%, #1b021f 100%);
+}
+
+.nubank .logo {
+  display: block;
+}
+
+.nubank .expiration:before {
+  content: "valid thru";
+  text-transform: uppercase;
+  position: absolute;
+  font-size: 7px;
+  opacity: .3;
+  top: -10px;
+}
+
+.nubank .holderName {
+  top: 190px;
+  left: 30px;
+}
+
+.nubank.gold:before {
+  content: "gold";
+  font-family: "Poppins";
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: lowercase;
+  font-weight: 700;
+  margin: 4.5rem 9.7rem;
+  position: absolute;
+}
+
+.nubank.platinum:before {
+  position: absolute;
+  content: "platinum";
+  font-family: "Share Tech Mono", monospace;
+  color: rgba(255, 201, 255, 0.8);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-align: center;
+  text-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  margin: 4.8rem 9rem;
+}
