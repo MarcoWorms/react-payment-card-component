@@ -15,7 +15,7 @@
   text-transform: uppercase;
   position: absolute;
   font-size: 7px;
-  opacity: .3;
+  opacity: 0.3;
   top: -10px;
 }
 
@@ -32,7 +32,6 @@
   letter-spacing: 0.2em;
   text-align: center;
   text-transform: lowercase;
-  font-weight: 700;
   margin: 4.5rem 9.7rem;
   position: absolute;
 }

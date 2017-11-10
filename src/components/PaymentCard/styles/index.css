@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Overpass+Mono');
-@import url('https://fonts.googleapis.com/css?family=Poppins');
-
-@import './banks/nubank.css';
+@import url("https://fonts.googleapis.com/css?family=Overpass+Mono");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import "./banks/nubank.css";

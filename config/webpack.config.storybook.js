@@ -66,7 +66,6 @@ module.exports = {
             options: {
               ident: 'postcss',
               plugins: () => [
-                require('stylelint'),
                 require('postcss-sass-each'),
                 require('postcss-mixins'),
                 require('postcss-import'),

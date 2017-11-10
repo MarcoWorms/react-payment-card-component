@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { storiesOf } from '@storybook/react'
 import PaymentCard from '../src/components/PaymentCard/PaymentCard'
 
@@ -27,12 +28,17 @@ class CardContainer extends Component {
         <button onClick={() => {
           const flipped = !this.state.flipped
           this.setState({ flipped })
-        }}>
+        }}
+        >
           Flip the card
         </button>
       </div>
     )
   }
+}
+
+CardContainer.propTypes = {
+  type: PropTypes.string.isRequired,
 }
 
 storiesOf('Nubank', module)

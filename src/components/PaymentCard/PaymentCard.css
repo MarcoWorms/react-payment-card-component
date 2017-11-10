@@ -1,18 +1,11 @@
-@import './styles/index.css';
+@import "./styles/index.css";
 
 :root {
-<<<<<<< Updated upstream
-  --widthLogo: 120px;
-  --cart-text-color: #fff;
-  --cart-text-font: "Overpass Mono", monospaced;
-  --cart-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-=======
   --width-logo: 120px;
   --card-text-color: #ffffff;
   --card-text-font: "Overpass Mono", monospaced;
   --card-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
   --card-background: linear-gradient(90deg, #353535, #717171);
->>>>>>> Stashed changes
 }
 
 .cardWrapper {
@@ -27,12 +20,8 @@
   border-radius: 10px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
   transform-style: preserve-3d;
-<<<<<<< Updated upstream
-  transition: all .25s ease-out;
-=======
   transition: all 0.25s ease-out;
   background: var(--card-background);
->>>>>>> Stashed changes
 }
 
 .front {
@@ -59,9 +48,9 @@
   left: 30px;
   width: 50px;
   height: 40px;
-  border: 2px solid #666;
+  border: 2px solid #666666;
   border-radius: 8px;
-  background: linear-gradient(45deg, rgba(250,250,250,1) 0%, rgba(204,204,204,1) 100%);
+  background: linear-gradient(45deg, rgba(250, 250, 250, 1) 0%, rgba(204, 204, 204, 1) 100%);
   overflow: hidden;
 }
 
@@ -69,15 +58,15 @@
   position: absolute;
   top: 20px;
   width: 100%;
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid #aaaaaa;
 }
 
 .chip .horizontalLine:before,
 .chip .horizontalLine:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid #aaaaaa;
   display: block;
 }
 
@@ -96,11 +85,11 @@
   left: 15px;
   width: 1px;
   height: 23px;
-  background-color: #aaa;
+  background-color: #aaaaaa;
 }
 
 .chip .verticalLine:after {
-  content: '';
+  content: "";
   top: 0;
   left: 17px;
   display: block;
@@ -150,7 +139,7 @@
 }
 
 .back:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 10px;
   left: 0;
@@ -167,7 +156,7 @@
   left: 20px;
   width: 61%;
   padding: 7px 12px;
-  background-color: #CCC;
+  background-color: #cccccc;
   font-size: 14px;
   font-family: "Poppins", serif;
   font-style: italic;
@@ -175,7 +164,7 @@
 }
 
 .flipped {
-  background: linear-gradient(90deg, #353535, #111);
+  background: linear-gradient(90deg, #353535, #111111);
   box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.6);
   transform: rotateY(180deg);
 }
@@ -188,8 +177,8 @@
   display: none;
 }
 
-.flipped .chip .verticalLine,
-.flipped .chip .horizontalLine {
+.flipped .verticalLine,
+.flipped .horizontalLine {
   display: none;
 }
 
@@ -197,7 +186,7 @@
 .flipped .holderName,
 .flipped .expiration {
   color: #848484;
-  text-shadow: 1px -1px 0 #000, 0 0 1px #FFF, 1px -1px 0 #000;
+  text-shadow: 1px -1px 0 #000000, 0 0 1px #ffffff, 1px -1px 0 #000000;
 }
 
 .flipped .back {

@@ -199,7 +199,6 @@ module.exports = {
                   // https://github.com/facebookincubator/create-react-app/issues/2677
                   ident: 'postcss',
                   plugins: () => [
-                    require('stylelint'),
                     require('postcss-flexbugs-fixes'),
                     require('postcss-sass-each'),
                     require('postcss-import'),

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './PaymentCard.css'
 import banksLogos from './images/banks'
+import './PaymentCard.css'
 
 const formatCardNumber = number => number.replace(/(\d{4})/g, '$1 ')
 
@@ -17,7 +17,7 @@ const PaymentCard = (props) => {
     flipped,
   } = props
 
-  const classNames = () => ([
+  const classNames = ([
     'card',
     bank,
     type,
@@ -26,7 +26,7 @@ const PaymentCard = (props) => {
 
   return (
     <div className="cardWrapper">
-      <div className={classNames()}>
+      <div className={classNames}>
         <div className="front">
           <img src={banksLogos[bank]} alt={bank} className="logo" />
           <div className="chip">
@@ -59,7 +59,7 @@ PaymentCard.propTypes = {
     'default',
     'nubank',
   ]),
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   brand: PropTypes.oneOf([
     'mastercard',
     'visa',
@@ -74,6 +74,7 @@ PaymentCard.propTypes = {
 
 PaymentCard.defaultProps = {
   bank: 'default',
+  type: '',
   brand: 'mastercard',
   number: '•••• •••• •••• ••••',
   cvv: '•••',
