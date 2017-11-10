@@ -1,13 +1,5 @@
 @import "./styles/index.css";
 
-:root {
-  --width-logo: 120px;
-  --card-text-color: #ffffff;
-  --card-text-font: "Overpass Mono", monospaced;
-  --card-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-  --card-background: linear-gradient(90deg, #353535, #717171);
-}
-
 .cardWrapper {
   perspective: 1000px;
 }
@@ -21,7 +13,7 @@
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
   transform-style: preserve-3d;
   transition: all 0.25s ease-out;
-  background: var(--card-background);
+  background: var(--card-background-default);
 }
 
 .front {
@@ -29,7 +21,7 @@
   height: 100%;
   border-radius: 10px;
   z-index: 1;
-  color: var(--card-text-color);
+  color: var(--card-text-color-default);
   font-family: var(--card-text-font);
   text-shadow: var(--card-text-shadow);
 }

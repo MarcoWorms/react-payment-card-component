@@ -1,9 +1,13 @@
 .card.nubank {
-  background: linear-gradient(to bottom right, #833e85 0%, #521a5a 100%);
+  background: var(--card-background-front-nubank);
+}
+
+.nubank .front {
+  color: var(--card-text-color-nubank);
 }
 
 .nubank.flipped {
-  background: linear-gradient(to bottom right, #833e85 0%, #1b021f 100%);
+  background: var(--card-background-back-nubank);
 }
 
 .nubank .logo {
@@ -17,11 +21,6 @@
   font-size: 7px;
   opacity: 0.3;
   top: -10px;
-}
-
-.nubank .holderName {
-  top: 190px;
-  left: 30px;
 }
 
 .nubank.gold:before {
