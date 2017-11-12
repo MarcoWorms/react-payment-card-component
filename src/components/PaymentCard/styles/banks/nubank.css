@@ -1,3 +1,9 @@
+:root {
+  --card-text-color-nubank: #f6d3fd;
+  --card-background-front-nubank: linear-gradient(to bottom right, #833e85 0%, #521a5a 100%);
+  --card-background-back-nubank: linear-gradient(to bottom right, #833e85 0%, #1b021f 100%);
+}
+
 .card.nubank {
   background: var(--card-background-front-nubank);
 }

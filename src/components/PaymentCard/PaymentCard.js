@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import banksLogos from './images/banks'
 import './PaymentCard.css'
 
-const formatCardNumber = number => number.replace(/(\d{4})/g, '$1 ')
+const formatCardNumber = number => number.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ')
 
 const PaymentCard = (props) => {
   const {
