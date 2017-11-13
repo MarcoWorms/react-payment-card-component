@@ -37,7 +37,10 @@ const PaymentCard = (props) => {
       )}
       >
         <div className="front">
-          <img src={bankLogos[getLogoSrc(bank, type)]} alt={bank} className="logo" />
+          { bank !== 'default'
+            ? <img src={bankLogos[getLogoSrc(bank, type)]} alt={bank} className="logo" />
+            : ''
+          }
           <div className="chip">
             <div className="horizontalLine" />
             <div className="verticalLine" />
