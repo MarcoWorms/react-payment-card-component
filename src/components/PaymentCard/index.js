@@ -61,6 +61,8 @@ PaymentCard.propTypes = {
   bank: PropTypes.oneOf([
     'default',
     'nubank',
+    'bradesco',
+    'santander',
   ]),
   type: PropTypes.string,
   brand: PropTypes.oneOf([
