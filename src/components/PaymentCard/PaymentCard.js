@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import banksLogos from './images/banks'
+import bankLogos from './images/banks'
 import './PaymentCard.css'
 
-const formatCardNumber = number => number.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ')
+const capitalize = string =>
+  string.charAt(0).toUpperCase() + string.slice(1)
 
 const PaymentCard = (props) => {
   const {
@@ -18,17 +19,25 @@ const PaymentCard = (props) => {
     flipped,
   } = props
 
+  const formatCardNumber = cardNumber =>
+    cardNumber.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ')
+
+  const getLogoSrc = (bankName, cardType) => {
+    console.log(`${bankName}${capitalize(cardType)}`)
+    return `${bankName}${capitalize(cardType)}`
+  }
+
   return (
     <div className="cardWrapper">
       <div className={classNames(
         'card',
         bank,
-        type,
+        `${bank}-${type}`,
         { flipped },
       )}
       >
         <div className="front">
-          <img src={banksLogos[bank]} alt={bank} className="logo" />
+          <img src={bankLogos[getLogoSrc(bank, type)]} alt={bank} className="logo" />
           <div className="chip">
             <div className="horizontalLine" />
             <div className="verticalLine" />
