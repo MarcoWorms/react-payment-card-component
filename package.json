@@ -110,7 +110,13 @@
       "jest": true
     },
     "rules": {
-      "react/jsx-filename-extension": 0
+      "react/jsx-filename-extension": 0,
+      "react/jsx-no-bind": [2, {
+        "ignoreRefs": false,
+        "allowArrowFunctions": false,
+        "allowFunctions": false,
+        "allowBind": false
+      }]
     }
   },
   "stylelint": {
