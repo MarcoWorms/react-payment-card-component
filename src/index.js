@@ -1,1 +1,3 @@
-export { CreditCard as default } from './components/CreditCard'
+import PaymentCard from './components/PaymentCard/PaymentCard'
+
+export default PaymentCard

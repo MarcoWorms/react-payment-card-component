@@ -1,17 +1,17 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import CreditCard from './CreditCard'
+import PaymentCard from './PaymentCard'
 
-describe('CreditCard', () => {
+describe('PaymentCard', () => {
   it('should mount', () => {
     shallow(
-      <CreditCard />
+      <PaymentCard />
     )
   })
 
   it('should mount with bank', () => {
     shallow(
-      <CreditCard
+      <PaymentCard
         bank="default"
       />
     )
@@ -19,7 +19,7 @@ describe('CreditCard', () => {
 
   it('should mount with brand', () => {
     shallow(
-      <CreditCard
+      <PaymentCard
         brand="mastercard"
       />
     )
@@ -27,7 +27,7 @@ describe('CreditCard', () => {
 
   it('should mount with type', () => {
     shallow(
-      <CreditCard
+      <PaymentCard
         type="gold"
       />
     )
@@ -35,7 +35,7 @@ describe('CreditCard', () => {
 
   it('should mount with number', () => {
     shallow(
-      <CreditCard
+      <PaymentCard
         number="4111111111111111"
       />
     )
@@ -43,7 +43,7 @@ describe('CreditCard', () => {
 
   it('should mount with cvv', () => {
     shallow(
-      <CreditCard
+      <PaymentCard
         cvv="123"
       />
     )
@@ -51,7 +51,7 @@ describe('CreditCard', () => {
 
   it('should mount with holderName', () => {
     shallow(
-      <CreditCard
+      <PaymentCard
         holderName="Fulano de tal"
       />
     )
@@ -59,7 +59,7 @@ describe('CreditCard', () => {
 
   it('should mount with expiration', () => {
     shallow(
-      <CreditCard
+      <PaymentCard
         expiration="12/19"
       />
     )
@@ -67,7 +67,7 @@ describe('CreditCard', () => {
 
   it('should mount with flipped', () => {
     shallow(
-      <CreditCard
+      <PaymentCard
         flipped
       />
     )
@@ -75,7 +75,7 @@ describe('CreditCard', () => {
 
   it('should mount full component', () => {
     shallow(
-      <CreditCard
+      <PaymentCard
         bank="default"
         brand="mastercard"
         number="4111111111111111"

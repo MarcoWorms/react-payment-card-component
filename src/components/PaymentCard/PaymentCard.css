@@ -1,0 +1,194 @@
+@import "./styles/index.css";
+
+:root {
+  --width-logo: 120px;
+  --card-text-space-left: 30px;
+  --card-text-color-default: #ffffff;
+  --card-text-font: "Overpass Mono", monospaced;
+  --card-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  --card-background-default: linear-gradient(90deg, #353535, #717171);
+}
+
+.cardWrapper {
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 222px;
+  min-width: 350px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+  transform-style: preserve-3d;
+  transition: all 0.25s ease-out;
+  background: var(--card-background-default);
+}
+
+.front {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  color: var(--card-text-color-default);
+  font-family: var(--card-text-font);
+  text-shadow: var(--card-text-shadow);
+}
+
+.logo {
+  position: absolute;
+  right: 50%;
+  width: var(--width-logo);
+  display: none;
+  transform: translate(calc(var(--width-logo) / 2), 15px);
+}
+
+.chip {
+  position: absolute;
+  top: 62px;
+  left: var(--card-text-space-left);
+  width: 50px;
+  height: 40px;
+  border: 2px solid #666666;
+  border-radius: 8px;
+  background: linear-gradient(45deg, rgba(250, 250, 250, 1) 0%, rgba(204, 204, 204, 1) 100%);
+  overflow: hidden;
+}
+
+.chip .horizontalLine {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.chip .horizontalLine:before,
+.chip .horizontalLine:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #aaaaaa;
+  display: block;
+}
+
+.chip .horizontalLine:before {
+  top: -12px;
+}
+
+.chip .horizontalLine:after {
+  bottom: -12px;
+}
+
+.chip .verticalLine,
+.chip .verticalLine:after {
+  position: absolute;
+  top: 9px;
+  left: 15px;
+  width: 1px;
+  height: 23px;
+  background-color: #aaaaaa;
+}
+
+.chip .verticalLine:after {
+  content: "";
+  top: 0;
+  left: 17px;
+  display: block;
+}
+
+.number {
+  position: absolute;
+  top: 120px;
+  left: var(--card-text-space-left);
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.14em;
+}
+
+.holderName {
+  position: absolute;
+  top: 160px;
+  left: var(--card-text-space-left);
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.expiration {
+  position: absolute;
+  top: 190px;
+  left: var(--card-text-space-left);
+  font-size: 15px;
+  justify-content: space-between;
+}
+
+.brand {
+  position: absolute;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transform: rotateY(180deg);
+  opacity: 0;
+  z-index: 0;
+}
+
+.back:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #000000;
+  display: block;
+}
+
+.cvv {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 66px;
+  left: 20px;
+  width: 61%;
+  padding: 7px 12px;
+  background-color: #cccccc;
+  font-size: 14px;
+  font-family: "Poppins", serif;
+  font-style: italic;
+  text-align: right;
+}
+
+.flipped {
+  background: linear-gradient(90deg, #353535, #111111);
+  box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.6);
+  transform: rotateY(180deg);
+}
+
+.flipped .logo {
+  display: none;
+}
+
+.flipped .chip {
+  display: none;
+}
+
+.flipped .verticalLine,
+.flipped .horizontalLine {
+  display: none;
+}
+
+.flipped .number,
+.flipped .holderName,
+.flipped .expiration {
+  color: #848484;
+  text-shadow: 1px -1px 0 #000000, 0 0 1px #ffffff, 1px -1px 0 #000000;
+}
+
+.flipped .back {
+  opacity: 1;
+}
