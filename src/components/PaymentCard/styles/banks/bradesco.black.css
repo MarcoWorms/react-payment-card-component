@@ -6,8 +6,12 @@
   background: linear-gradient(90deg, #353535, #111111);
 }
 
-.bradesco-black .logo {
+.bradesco-black .bankLogo {
   transform: translate(-23px, 15px);
+}
+
+.bradesco-black .brandLogo {
+  right: 20px;
 }
 
 .bradesco-black .number {

@@ -3,12 +3,13 @@ import { shallow } from 'enzyme'
 import Logo from './'
 import PaymentCard from '../PaymentCard'
 
-it('should mount with logo', () => {
+it('should mount with bank logo and brand logo', () => {
   const wrapper = shallow(
     <PaymentCard
       bank="nubank"
+      brand="mastercard"
     />
   )
 
-  expect(wrapper.find(Logo)).toHaveLength(1)
+  expect(wrapper.find(Logo)).toHaveLength(2)
 })
