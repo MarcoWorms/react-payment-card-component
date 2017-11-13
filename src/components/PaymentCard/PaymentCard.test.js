@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import PaymentCard from './PaymentCard'
+import PaymentCard from './'
 
 describe('PaymentCard', () => {
   it('should mount', () => {
@@ -92,25 +92,5 @@ describe('PaymentCard', () => {
         flipped
       />
     )
-  })
-
-  it('should mount with logo', () => {
-    const wrapper = shallow(
-      <PaymentCard
-        bank="nubank"
-      />
-    )
-
-    expect(wrapper.find('.logo')).toHaveLength(1)
-  })
-
-  it('should not mount without logo', () => {
-    const wrapper = shallow(
-      <PaymentCard
-        bank="default"
-      />
-    )
-
-    expect(wrapper.find('.logo')).toHaveLength(0)
   })
 })

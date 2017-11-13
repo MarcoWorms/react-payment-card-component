@@ -16,10 +16,6 @@
   background: var(--card-background-back-nubank);
 }
 
-.nubank .logo {
-  display: block;
-}
-
 .nubank .holderName {
   top: 190px;
 }

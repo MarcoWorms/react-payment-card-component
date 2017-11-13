@@ -1,0 +1,11 @@
+:root {
+  --width-logo: 120px;
+}
+
+.logo {
+  backface-visibility: hidden;
+  position: absolute;
+  right: 50%;
+  width: var(--width-logo);
+  transform: translate(calc(var(--width-logo) / 2), 15px);
+}
