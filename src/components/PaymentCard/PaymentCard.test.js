@@ -4,9 +4,12 @@ import PaymentCard from './PaymentCard'
 
 describe('PaymentCard', () => {
   it('should mount', () => {
-    shallow(
+    const wrapper = shallow(
       <PaymentCard />
     )
+
+    expect(wrapper.find('.flipped')).toHaveLength(0)
+    expect(wrapper.find('.cardWrapper')).toHaveLength(1)
   })
 
   it('should mount with bank', () => {
@@ -34,11 +37,13 @@ describe('PaymentCard', () => {
   })
 
   it('should mount with number', () => {
-    shallow(
+    const wrapper = shallow(
       <PaymentCard
         number="4111111111111111"
       />
     )
+
+    expect(wrapper.text()).toContain('4111 1111 1111 1111')
   })
 
   it('should mount with cvv', () => {
@@ -66,11 +71,13 @@ describe('PaymentCard', () => {
   })
 
   it('should mount with flipped', () => {
-    shallow(
+    const wrapper = shallow(
       <PaymentCard
         flipped
       />
     )
+
+    expect(wrapper.find('.flipped')).toHaveLength(1)
   })
 
   it('should mount full component', () => {
