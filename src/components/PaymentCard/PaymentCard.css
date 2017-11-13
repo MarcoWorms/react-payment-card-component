@@ -2,6 +2,7 @@
 
 :root {
   --width-logo: 120px;
+  --card-text-space-left: 30px;
   --card-text-color-default: #ffffff;
   --card-text-font: "Overpass Mono", monospaced;
   --card-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
@@ -44,7 +45,7 @@
 .chip {
   position: absolute;
   top: 62px;
-  left: 30px;
+  left: var(--card-text-space-left);
   width: 50px;
   height: 40px;
   border: 2px solid #666666;
@@ -97,7 +98,7 @@
 .number {
   position: absolute;
   top: 120px;
-  left: 30px;
+  left: var(--card-text-space-left);
   font-size: 18px;
   font-weight: normal;
   letter-spacing: 0.14em;
@@ -105,8 +106,8 @@
 
 .holderName {
   position: absolute;
-  top: 190px;
-  left: 30px;
+  top: 160px;
+  left: var(--card-text-space-left);
   font-size: 16px;
   font-weight: normal;
   letter-spacing: 0.14em;
@@ -115,8 +116,8 @@
 
 .expiration {
   position: absolute;
-  top: 160px;
-  left: 150px;
+  top: 190px;
+  left: var(--card-text-space-left);
   font-size: 15px;
   justify-content: space-between;
 }

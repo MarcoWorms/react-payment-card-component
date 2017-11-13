@@ -20,6 +20,15 @@
   display: block;
 }
 
+.nubank .holderName {
+  top: 190px;
+}
+
+.nubank .expiration {
+  top: 160px;
+  left: 150px;
+}
+
 .nubank .expiration:before {
   content: "valid thru";
   text-transform: uppercase;
