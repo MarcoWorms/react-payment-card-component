@@ -16,10 +16,6 @@
   background: var(--card-background-back-nubank);
 }
 
-.nubank .logo {
-  display: block;
-}
-
 .nubank .holderName {
   top: 190px;
 }
@@ -38,7 +34,7 @@
   top: -10px;
 }
 
-.nubank.gold:before {
+.nubank-gold:before {
   content: "gold";
   font-family: "Poppins";
   color: rgba(255, 255, 255, 0.4);
@@ -50,7 +46,7 @@
   position: absolute;
 }
 
-.nubank.platinum:before {
+.nubank-platinum:before {
   position: absolute;
   content: "platinum";
   font-family: "Share Tech Mono", monospace;

@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import PaymentCard from './PaymentCard'
+import PaymentCard from './'
 
 describe('PaymentCard', () => {
   it('should mount', () => {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import PaymentCard from '../src/components/PaymentCard/PaymentCard'
+import PaymentCard from '../src/components/PaymentCard'
 
 class PaymentCardContainer extends Component {
   constructor (props) {

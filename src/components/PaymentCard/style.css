@@ -1,7 +1,6 @@
 @import "./styles/index.css";
 
 :root {
-  --width-logo: 120px;
   --card-text-space-left: 30px;
   --card-text-color-default: #ffffff;
   --card-text-font: "Overpass Mono", monospaced;
@@ -34,15 +33,8 @@
   text-shadow: var(--card-text-shadow);
 }
 
-.logo {
-  position: absolute;
-  right: 50%;
-  width: var(--width-logo);
-  display: none;
-  transform: translate(calc(var(--width-logo) / 2), 15px);
-}
-
 .chip {
+  backface-visibility: hidden;
   position: absolute;
   top: 62px;
   left: var(--card-text-space-left);
@@ -167,14 +159,6 @@
   background: linear-gradient(90deg, #353535, #111111);
   box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.6);
   transform: rotateY(180deg);
-}
-
-.flipped .logo {
-  display: none;
-}
-
-.flipped .chip {
-  display: none;
 }
 
 .flipped .verticalLine,

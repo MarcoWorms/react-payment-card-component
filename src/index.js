@@ -1,3 +1,3 @@
-import PaymentCard from './components/PaymentCard/PaymentCard'
+import PaymentCard from './components/PaymentCard'
 
 export default PaymentCard

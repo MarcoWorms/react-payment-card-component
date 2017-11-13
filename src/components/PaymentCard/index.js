@@ -1,34 +1,37 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import banksLogos from './images/banks'
-import './PaymentCard.css'
 
-const formatCardNumber = number => number.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ')
+import Logo from '../Logo'
+import './style.css'
 
-const PaymentCard = (props) => {
-  const {
-    bank,
-    type,
-    number,
-    cvv,
-    expiration,
-    holderName,
-    brand,
-    flipped,
-  } = props
+const PaymentCard = ({
+  bank,
+  type,
+  number,
+  cvv,
+  expiration,
+  holderName,
+  brand,
+  flipped,
+}) => {
+  const formatCardNumber = cardNumber =>
+    cardNumber.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ')
 
   return (
     <div className="cardWrapper">
       <div className={classNames(
         'card',
         bank,
-        type,
+        `${bank}-${type}`,
         { flipped },
       )}
       >
         <div className="front">
-          <img src={banksLogos[bank]} alt={bank} className="logo" />
+          <Logo
+            bank={bank}
+            type={type}
+          />
           <div className="chip">
             <div className="horizontalLine" />
             <div className="verticalLine" />
