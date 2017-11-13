@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 import banksLogos from './images/banks'
 import './PaymentCard.css'
 
@@ -17,16 +18,15 @@ const PaymentCard = (props) => {
     flipped,
   } = props
 
-  const classNames = ([
-    'card',
-    bank,
-    type,
-    flipped ? 'flipped' : '',
-  ]).join(' ')
-
   return (
     <div className="cardWrapper">
-      <div className={classNames}>
+      <div className={classNames(
+        'card',
+        bank,
+        type,
+        { flipped },
+      )}
+      >
         <div className="front">
           <img src={banksLogos[bank]} alt={bank} className="logo" />
           <div className="chip">
