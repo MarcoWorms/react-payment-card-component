@@ -7,13 +7,25 @@ import './style.css'
 const capitalize = string =>
   string.charAt(0).toUpperCase() + string.slice(1)
 
+const getLogo = (className, bankName, brandName) => {
+  if (className === 'brandLogo') {
+    return brandLogos[brandName]
+  }
+
+  if (className === 'bankLogo') {
+    return bankLogos[bankName]
+  }
+
+  return ''
+}
 const Logo = ({
   bank,
   type,
   brand,
   className,
 }) => {
-  const logoSrc = bankLogos[`${bank}${capitalize(type)}`] || brandLogos[brand]
+  const bankWithType = `${bank}${capitalize(type)}`
+  const logoSrc = getLogo(className, bankWithType, brand)
 
   if (!logoSrc) {
     return ''
