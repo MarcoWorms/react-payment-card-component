@@ -20,6 +20,8 @@ const getLogo = (className, bankName, brandName) => {
 }
 
 const capitalizeType = (type) => {
+  if (!type) return ''
+
   const names = type.split('-')
 
   if (names.length > 1) {

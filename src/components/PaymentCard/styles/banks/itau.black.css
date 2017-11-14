@@ -1,5 +1,5 @@
 .card.itau-black {
-  background: #000000;
+  background: #1a191d;
 }
 
 .itau-black .flipped {
@@ -21,8 +21,7 @@
 }
 
 .itau-black .expiration:before {
-  content: "valid";
-  text-transform: uppercase;
+  content: "Valid";
   position: absolute;
   font-size: 0.425rem;
   top: 1px;
@@ -31,11 +30,10 @@
 }
 
 .itau-black .expiration:after {
-  content: "thru";
-  text-transform: uppercase;
+  content: "Thru";
   position: absolute;
   font-size: 0.425rem;
-  letter-spacing: 0.06rem;
+  letter-spacing: 0.08rem;
   top: 7px;
   left: -25px;
   color: #ffffff;

@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import PaymentCardContainer from './PaymentCardContainer'
 
-storiesOf('Ítau', module)
+storiesOf('Itaú', module)
   .add('Black', () => (
     <PaymentCardContainer
       bank="itau"

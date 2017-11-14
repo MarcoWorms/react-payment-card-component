@@ -163,7 +163,9 @@
 
 .flipped .number,
 .flipped .holderName,
-.flipped .expiration {
+.flipped .expiration,
+.flipped .expiration:before,
+.flipped .expiration:after {
   color: #848484;
   text-shadow: 1px -1px 0 #000000, 0 0 1px #ffffff, 1px -1px 0 #000000;
 }
