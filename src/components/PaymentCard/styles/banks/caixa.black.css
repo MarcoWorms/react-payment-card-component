@@ -1,0 +1,48 @@
+.card.caixa-black {
+  background: #000000;
+}
+
+.caixa-black .flipped {
+  background: linear-gradient(90deg, #353535, #111111);
+}
+
+.caixa-black .bankLogo {
+  transform: translate(150px, 20px);
+}
+
+.caixa-black .chip:after {
+  content: "black";
+  position: absolute;
+  top: 12px;
+  left: 125px;
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.caixa-black .holderName {
+  top: 190px;
+  left: 35px;
+}
+
+.caixa-black .number {
+  left: 35px;
+}
+
+.caixa-black .expiration {
+  top: 166px;
+  left: 156px;
+}
+
+.caixa-black .expiration:before {
+  content: "valid thru";
+  position: absolute;
+  top: -7px;
+  left: -40px;
+  width: 25px;
+  color: #ffffff;
+  font-size: 0.425rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
