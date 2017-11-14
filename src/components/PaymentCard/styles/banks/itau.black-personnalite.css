@@ -1,0 +1,30 @@
+.card.itau-black-personnalite {
+  background: #0b0000;
+}
+
+.itau-black-personnalite .flipped {
+  background: linear-gradient(90deg, #353535, #111111);
+}
+
+.itau-black-personnalite .bankLogo {
+  width: 70px;
+  transform: translate(calc(70px / 2), 20px);
+}
+
+.itau-black-personnalite .number {
+  left: 30px;
+  opacity: 0.5;
+}
+
+.itau-black-personnalite .expiration {
+  top: 162px;
+  left: 138px;
+  opacity: 0;
+}
+
+.itau-black-personnalite .holderName {
+  top: 180px;
+  left: 30px;
+  font-size: 0.8em;
+  opacity: 0.5;
+}
