@@ -1,11 +1,22 @@
 :root {
-  --width-logo: 120px;
+  --width-bank-logo: 120px;
+  --width-brand-logo: 70px;
 }
 
-.logo {
+.bankLogo,
+.brandLogo {
   backface-visibility: hidden;
   position: absolute;
+}
+
+.bankLogo {
   right: 50%;
-  width: var(--width-logo);
-  transform: translate(calc(var(--width-logo) / 2), 15px);
+  width: var(--width-bank-logo);
+  transform: translate(calc(var(--width-bank-logo) / 2), 15px);
+}
+
+.brandLogo {
+  bottom: 10px;
+  right: 25px;
+  width: var(--width-brand-logo);
 }

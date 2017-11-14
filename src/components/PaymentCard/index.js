@@ -31,6 +31,7 @@ const PaymentCard = ({
           <Logo
             bank={bank}
             type={type}
+            className="bankLogo"
           />
           <div className="chip">
             <div className="horizontalLine" />
@@ -45,7 +46,10 @@ const PaymentCard = ({
           <div className="holderName">
             {holderName}
           </div>
-          <div className={`brand ${brand}`} />
+          <Logo
+            brand={brand}
+            className="brandLogo"
+          />
         </div>
         <div className="back">
           <div className="cvv">
@@ -67,6 +71,7 @@ PaymentCard.propTypes = {
     'mastercard',
     'visa',
     'hipercard',
+    'elo',
   ]),
   number: PropTypes.string,
   cvv: PropTypes.string,
