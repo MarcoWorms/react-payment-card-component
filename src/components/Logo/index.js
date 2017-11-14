@@ -2,18 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import bankLogos from './images/banks'
 import brandLogos from './images/brands'
+import typeLogos from './images/types'
 import './style.css'
 
 const capitalize = string =>
   string.charAt(0).toUpperCase() + string.slice(1)
 
-const getLogo = (className, bankName, brandName) => {
+const getLogo = (className, sourceName, brandName) => {
   if (className === 'brandLogo') {
     return brandLogos[brandName]
   }
 
   if (className === 'bankLogo') {
-    return bankLogos[bankName]
+    return bankLogos[sourceName]
+  }
+
+  if (className === 'typeLogo') {
+    return typeLogos[sourceName]
   }
 
   return ''

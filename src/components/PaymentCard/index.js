@@ -31,6 +31,11 @@ const PaymentCard = ({
           <Logo
             bank={bank}
             type={type}
+            className="typeLogo"
+          />
+          <Logo
+            bank={bank}
+            type={type}
             className="bankLogo"
           />
           <div className="chip">
@@ -67,6 +72,7 @@ PaymentCard.propTypes = {
     'nubank',
     'bradesco',
     'santander',
+    'itau',
   ]),
   type: PropTypes.string,
   brand: PropTypes.oneOf([

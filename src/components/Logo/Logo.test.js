@@ -11,5 +11,5 @@ it('should mount with bank logo and brand logo', () => {
     />
   )
 
-  expect(wrapper.find(Logo)).toHaveLength(2)
+  expect(wrapper.find(Logo)).toHaveLength(3)
 })

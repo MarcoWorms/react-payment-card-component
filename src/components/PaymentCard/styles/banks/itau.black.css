@@ -2,6 +2,12 @@
   background: #1a191d;
 }
 
+.itau-black .typeLogo {
+  width: 75px;
+  top: 15px;
+  left: 20px;
+}
+
 .itau-black .flipped {
   background: linear-gradient(90deg, #353535, #111111);
 }
