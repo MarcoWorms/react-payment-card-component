@@ -18,13 +18,24 @@ const getLogo = (className, bankName, brandName) => {
 
   return ''
 }
+
+const capitalizeType = (type) => {
+  const names = type.split('-')
+
+  if (names.length > 1) {
+    return names.map(capitalize).join('')
+  }
+
+  return capitalize(type)
+}
+
 const Logo = ({
   bank,
   type,
   brand,
   className,
 }) => {
-  const bankWithType = `${bank}${capitalize(type)}`
+  const bankWithType = `${bank}${capitalizeType(type)}`
   const logoSrc = getLogo(className, bankWithType, brand)
 
   if (!logoSrc) {
