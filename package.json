@@ -5,6 +5,8 @@
   "dependencies": {
     "@storybook/react": "3.2.14",
     "@storybook/storybook-deployer": "2.0.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "chalk": "1.1.3",
     "classnames": "^2.2.5",
     "css-loader": "0.28.4",
@@ -39,6 +41,7 @@
     "webpack": "3.8.1"
   },
   "scripts": {
+    "build": "webpack --config ./config/webpack.config.prod.js",
     "lint": "eslint './{src,stories}/**/*.js' && stylelint './{src,stories}/**/*.css'",
     "test": "node config/jest/test.js --env=jsdom",
     "storybook": "start-storybook -p 6006",
@@ -91,7 +94,10 @@
       "jest": true
     },
     "rules": {
-      "comma-dangle": ["error", "always-multiline"],
+      "comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
       "react/jsx-filename-extension": 0,
       "react/jsx-no-bind": [
         2,
