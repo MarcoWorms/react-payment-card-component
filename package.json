@@ -40,7 +40,7 @@
   },
   "scripts": {
     "lint": "eslint './{src,stories}/**/*.js' && stylelint './{src,stories}/**/*.css'",
-    "test": "node scripts/test.js --env=jsdom",
+    "test": "node config/jest/test.js --env=jsdom",
     "storybook": "start-storybook -p 6006",
     "preview": "storybook-to-ghpages"
   },
