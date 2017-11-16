@@ -32,7 +32,6 @@
   font-size: 0.425rem;
   top: 1px;
   left: -25px;
-  color: #ffffff;
 }
 
 .itau-black .expiration:after {
@@ -42,7 +41,6 @@
   letter-spacing: 0.08rem;
   top: 7px;
   left: -25px;
-  color: #ffffff;
 }
 
 .itau-black .holderName {

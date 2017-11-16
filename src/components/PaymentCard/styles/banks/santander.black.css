@@ -7,7 +7,8 @@
 }
 
 .santander-black .bankLogo {
-  transform: translate(-33px, 15px);
+  top: 15px;
+  left: 20px;
 }
 
 .santander-black .chip:after {
