@@ -14,3 +14,14 @@ storiesOf('Bradesco', module)
       expiration="12/19"
     />
   ))
+  .add('Black Prime', () => (
+    <PaymentCardContainer
+      bank="bradesco"
+      type="black-prime"
+      brand="mastercard"
+      number="4111111111111111"
+      cvv="123"
+      holderName="Fulano de Tal"
+      expiration="12/19"
+    />
+  ))

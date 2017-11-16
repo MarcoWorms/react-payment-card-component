@@ -1,0 +1,49 @@
+.card.bradesco-black-prime {
+  background: #000909;
+}
+
+.bradesco-black-prime .flipped {
+  background: linear-gradient(90deg, #353535, #111111);
+}
+
+.bradesco-black-prime .typeLogo {
+  width: 75px;
+  top: 85px;
+  transform: translate(calc((350px -75px) / 2), -20px);
+}
+
+.bradesco-black-prime .bankLogo {
+  top: -22px;
+  left: 10px;
+  width: 140px;
+}
+
+.bradesco-black-prime .brandLogo {
+  right: 20px;
+}
+
+.bradesco-black-prime .number {
+  left: 45px;
+}
+
+.bradesco-black-prime .expiration {
+  top: 146px;
+  left: 203px;
+}
+
+.bradesco-black-prime .expiration:before {
+  content: "valid thru";
+  text-transform: uppercase;
+  position: absolute;
+  font-size: 0.425rem;
+  opacity: 0.3;
+  top: 5px;
+  left: -50px;
+  color: #ffffff;
+}
+
+.bradesco-black-prime .holderName {
+  top: 180px;
+  left: 30px;
+  font-size: 0.8em;
+}
