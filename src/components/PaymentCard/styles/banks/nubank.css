@@ -5,6 +5,10 @@
   background: linear-gradient(to bottom right, #833e85 0%, #521a5a 100%);
 }
 
+.nubank .bankLogo {
+  transform: translate(calc(120px / 2), 15px);
+}
+
 .nubank .front {
   color: #f6d3fd;
 }

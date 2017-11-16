@@ -13,7 +13,6 @@
 .bankLogo {
   right: 50%;
   width: var(--width-bank-logo);
-  transform: translate(calc(var(--width-bank-logo) / 2), 15px);
 }
 
 .brandLogo {
