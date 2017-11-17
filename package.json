@@ -54,7 +54,8 @@
   "scripts": {
     "build": "webpack --config ./config/webpack.config.prod.js",
     "lint": "eslint './{src,stories}/**/*.js' && stylelint './{src,stories}/**/*.css'",
-    "test": "jest --watch --env=jsdom",
+    "test": "jest --env=jsdom",
+    "test:watch": "jest --watch --env=jsdom",
     "start": "start-storybook -p 6006",
     "deploy-storybook": "storybook-to-ghpages"
   },
