@@ -67,7 +67,11 @@ or
 npm run test
 ```
 
-#### Build the project
+#### Start Storybook
+
+[Storybook](https://storybook.js.org/) is like a playground so you can see the components up and running before importing it in your project.
+
+To start the Storybook in your local machine, simply run: 
 
 ```sh
 yarn start
@@ -76,21 +80,39 @@ yarn start
 or
 
 ```sh
-npm start
+npm run start
 ```
 
-#### Run storybook
+#### Creating new stories
 
-To start the Storybook in your local machine, simply run: 
+If you add new styles, remember to add a corresponding Story so we can see a rendered example.
 
-```sh
-yarn storybook
-```
+Do it by creating a new _.js_ file in  `./stories` and making it available by exporting it in `./stories/index.js`.
 
-or
+The file should be something like this at the end: 
 
-```sh
-npm run storybook
+```js
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+import PaymentCardContainer from './PaymentCardContainer'
+
+storiesOf('BankName', module)
+  .add('CardType1', () => (
+    <PaymentCardContainer
+      bank="bankName"
+      type="type1"
+      number="4111111111111111"
+      cvv="444"
+      holderName="Ygritte Snow"
+      expiration="12/21"
+    />
+  ))
+  .add('CardType2', () => (
+    <PaymentCardContainer
+      bank="bankName"
+      type="type2"
+    />
+  ))
 ```
 
 #### Opening your PR
