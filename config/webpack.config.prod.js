@@ -72,11 +72,34 @@ module.exports = {
         oneOf: [
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
-            loader: require.resolve('url-loader'),
-            options: {
-              limit: 1000000,
-              name: 'static/media/[name].[hash:8].[ext]',
-            },
+            use: [
+              {
+                loader: require.resolve('url-loader'),
+                options: {
+                  limit: 1000000,
+                  name: 'static/media/[name].[hash:8].[ext]',
+                }
+              },
+              {
+                loader: require.resolve('image-webpack-loader'),
+                options: {
+                  mozjpeg: {
+                    progressive: true,
+                    quality: 75
+                  },
+                  optipng: {
+                    enabled: false,
+                  },
+                  pngquant: {
+                    quality: '75-90',
+                    speed: 4
+                  },
+                  webp: {
+                    quality: 75
+                  }
+                }
+              },
+            ],
           },
           {
             test: /\.(js|jsx|mjs)$/,
