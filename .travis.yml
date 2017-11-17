@@ -11,9 +11,8 @@ cache:
 script:
   - yarn
   - yarn lint
-  - yarn build
-  - yarn lint
   - yarn test
+  - yarn build
 
 notifications:
   slack:
