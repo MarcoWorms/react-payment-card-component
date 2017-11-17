@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Overpass+Mono");
 @import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:700");
 @import "./banks/nubank.css";
 @import "./banks/bradesco.css";
 @import "./banks/santander.css";
 @import "./banks/itau.css";
+@import "./banks/ourocard.css";

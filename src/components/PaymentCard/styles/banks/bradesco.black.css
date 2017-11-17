@@ -7,7 +7,8 @@
 }
 
 .bradesco-black .bankLogo {
-  transform: translate(-23px, 15px);
+  top: 15px;
+  left: 30px;
 }
 
 .bradesco-black .brandLogo {
@@ -31,7 +32,6 @@
   opacity: 0.3;
   top: 5px;
   left: -50px;
-  color: #ffffff;
 }
 
 .bradesco-black .holderName {

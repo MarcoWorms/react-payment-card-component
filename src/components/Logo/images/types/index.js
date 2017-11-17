@@ -1,5 +1,6 @@
-import itauBlack from './mastercard-black.png'
+import mastercardBlack from './mastercard-black.png'
 
 export default {
-  itauBlack,
+  itauBlack: mastercardBlack,
+  ourocardBlack: mastercardBlack,
 }
