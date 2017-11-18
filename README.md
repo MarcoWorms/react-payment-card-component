@@ -8,24 +8,32 @@
 
 This React component will help you building your checkout on your e-commerce. 
 
-The first version of a payment card modal was used in [Pagar.me's checkout 1.0](https://codepen.io/pagarme/pen/QqWGOg), but as we're now rewriting it to version 2.0 in React, why not creating a component so people also can use it the way the prefer? 
+The first version of a payment card modal was used in [Pagar.me's checkout 1.0](https://codepen.io/pagarme/pen/QqWGOg), but as we're now rewriting it to version 2.0 in React, why not creating a component so people also can use it the way they prefer? 
 
-By having a lot of credit cards from many different banks, brands and types, users will be able to see a digital version of their credit cards as they type theirs number. 
+By having a lot of credit cards from many different banks, brands and types, users will be able to see a digital version of their credit cards as they type the credit card number. 
 
-Check it live in https://pagarme.github.io/react-payment-card-component
+Check it live at https://pagarme.github.io/react-payment-card-component
 
 ## Usage
 
-To use the component in your React app, start by adding it to the project dependencies list:
+To use this component in your React app, start by adding it to the project dependencies list:
+
+npm version > 5
 
 ```sh
-$ npm i react-payment-card-component
+npm i react-payment-card-component
 ```
 
-or 
+npm version < 5
 
 ```sh
-$ yarn add react-payment-card-component
+npm i react-payment-card-component --save
+```
+
+yarn
+
+```sh
+yarn add react-payment-card-component
 ```
 
 And then, import it:
@@ -51,7 +59,7 @@ render () {
 
 ### Flipping the card
 
-You can use React to manage the card state and implement your onw logic, like flipping the card with a button or when user is typing the CVV (Card Verification Value).
+You can use React to manage the card state and implement your own logic, like flipping the card with a button or when user is typing the CVV (Card Verification Value).
 
 ```js
 flipCard () {
@@ -77,7 +85,7 @@ flipCard () {
 
 ### Styling
 
-The CSS files to manage the banks styles are under `./src/components/PaymentCard/styles`, where each bank need to have its own file under the  `banks` folder and to have it imported in the main `./src/components/PaymentCard/styles/index.css` file.
+The CSS files to manage the banks styles are under `./src/components/PaymentCard/styles`, where each bank needs its own file under the  `banks` folder and have it imported in the main `./src/components/PaymentCard/styles/index.css` file.
 
 To add a new style, remember to create classes following the pattern: **_bankName_-_cardType_**: 
 
